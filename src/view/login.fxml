@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="login" maxHeight="750.0" maxWidth="1180.0" minHeight="750.0" minWidth="1180.0" prefHeight="750.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Pane layoutX="600.0" prefHeight="750.0" prefWidth="580.0" style="-fx-background-color: #004E98;">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="300.0" layoutX="190.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagens/Logomarca%203.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="159.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escolha o veículo perfeito para o seu ritmo!">
+               <font>
+                  <Font name="Montserrat Bold" size="16.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <Pane prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #F2F2F2; -fx-background-radius: 42px;">
+         <children>
+            <TextField id="inputUsuario" layoutX="150.0" layoutY="327.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-radius: 1000px;">
+               <padding>
+                  <Insets left="24.0" />
+               </padding></TextField>
+            <PasswordField id="inputSenha" layoutX="150.0" layoutY="425.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-radius: 100px;">
+               <padding>
+                  <Insets left="24.0" />
+               </padding></PasswordField>
+            <Text layoutX="165.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário">
+               <font>
+                  <Font name="Montserrat Medium" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="165.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
+               <font>
+                  <Font name="Montserrat Medium" size="14.0" />
+               </font>
+            </Text>
+            <Button id="botaoEntrar" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="505.0" mnemonicParsing="false" style="-fx-background-radius: 100px; -fx-background-color: #FF6700;" text="Entrar">
+               <font>
+                  <Font name="Montserrat Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+               </padding>
+            </Button>
+            <Text layoutX="158.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, Bem-Vindo de volta!">
+               <font>
+                  <Font name="Montserrat Bold" size="28.0" />
+               </font>
+            </Text>
+            <Text fill="#004e98" layoutX="241.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seus dados de login.">
+               <font>
+                  <Font name="Montserrat Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
