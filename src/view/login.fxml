@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="55.0" fitWidth="300.0" layoutX="190.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imagens/Logomarca%203.png" />
+                  <Image url="@imagens/logomarca.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="159.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escolha o veículo perfeito para o seu ritmo!">
@@ -28,15 +28,21 @@
          </children></Pane>
       <Pane prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #F2F2F2; -fx-background-radius: 42px;">
          <children>
-            <TextField id="inputUsuario" layoutX="150.0" layoutY="327.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-radius: 1000px;">
+            <TextField id="inputUsuario" layoutX="150.0" layoutY="337.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite seu nome de usuário" style="-fx-background-radius: 1000px;">
                <padding>
                   <Insets left="24.0" />
-               </padding></TextField>
-            <PasswordField id="inputSenha" layoutX="150.0" layoutY="425.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-radius: 100px;">
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <PasswordField id="inputSenha" layoutX="150.0" layoutY="425.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite sua senha" style="-fx-background-radius: 100px;">
                <padding>
                   <Insets left="24.0" />
-               </padding></PasswordField>
-            <Text layoutX="165.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário">
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></PasswordField>
+            <Text layoutX="165.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -46,7 +52,7 @@
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
             </Text>
-            <Button id="botaoEntrar" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="505.0" mnemonicParsing="false" style="-fx-background-radius: 100px; -fx-background-color: #FF6700;" text="Entrar">
+            <Button id="botaoEntrar" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="505.0" mnemonicParsing="false" style="-fx-background-radius: 100px; -fx-background-color: #FF6700; -fx-cursor: hand;" text="Entrar">
                <font>
                   <Font name="Montserrat Bold" size="16.0" />
                </font>
@@ -59,9 +65,9 @@
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Text>
-            <Text fill="#004e98" layoutX="241.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seus dados de login.">
+            <Text fill="#004e98" layoutX="305.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
                <font>
-                  <Font name="Montserrat Bold" size="14.0" />
+                  <Font name="Montserrat Bold" size="24.0" />
                </font>
             </Text>
          </children>
