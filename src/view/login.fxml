@@ -52,7 +52,7 @@
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
             </Text>
-            <Button id="botaoEntrar" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="505.0" mnemonicParsing="false" onAction="#botaoEntrarClick" style="-fx-background-radius: 100px; -fx-background-color: #FF6700; -fx-cursor: hand;" text="Entrar">
+            <Button id="botaoEntrar" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="505.0" mnemonicParsing="false" onAction="#botaoEntrarClick" style="-fx-background-radius: 100px; -fx-background-color: #FF6700; -fx-cursor: hand;" text="Entrar" textFill="WHITE">
                <font>
                   <Font name="Montserrat Bold" size="16.0" />
                </font>
