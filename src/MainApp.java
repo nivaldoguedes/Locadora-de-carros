@@ -7,9 +7,9 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/cadastroDeVeiculo.fxml"));
         Scene scene = new Scene(root,1180,750);
-        stage.setTitle("Login");
+        stage.setTitle("Cadastro de Veículo");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
