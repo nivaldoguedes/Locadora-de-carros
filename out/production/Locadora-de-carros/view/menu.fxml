@@ -37,7 +37,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnMenuCadastrarVeiculo" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Cadastrar Veículo" textFill="#004e98">
+            <Button fx:id="btnMenuCadastrarVeiculo" mnemonicParsing="false" onAction="#clickBotaoCadastrarVeiculo" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Cadastrar Veículo" textFill="#004e98">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
