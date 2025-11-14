@@ -123,5 +123,10 @@
             <Font name="Montserrat Bold" size="16.0" />
          </font>
       </Button>
+      <Text fill="WHITE" layoutX="443.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Veículo" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Bold" size="28.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
