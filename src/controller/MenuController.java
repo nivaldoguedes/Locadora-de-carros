@@ -2,6 +2,8 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import java.io.IOException;
 
 public class MenuController {
 
@@ -25,5 +27,10 @@ public class MenuController {
 
     @FXML
     private Button btnMenuManutencoes;
+
+    @FXML
+    void clickBotaoSair(ActionEvent event) throws IOException {
+        SceneNavegacao.navegar(event, "/view/login.fxml", "Login");
+    }
 
 }
