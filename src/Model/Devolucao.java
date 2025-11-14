@@ -1,8 +1,13 @@
 package Model;
 
 public class Devolucao {
-    float quilometragemFinal;
-    String danos;
+    private float quilometragemFinal;
+    private String danos;
+
+    public Devolucao(float quilometragemFinal, String danos) {
+        this.quilometragemFinal = quilometragemFinal;
+        this.danos = danos;
+    }
 
     public float getQuilometragemFinal() {
         return quilometragemFinal;
@@ -18,5 +23,13 @@ public class Devolucao {
 
     public void setDanos(String danos) {
         this.danos = danos;
+    }
+
+    @Override
+    public String toString() {
+        return "Devolucao{" +
+                "quilometragemFinal=" + quilometragemFinal +
+                ", danos='" + danos + '\'' +
+                '}';
     }
 }

@@ -2,10 +2,17 @@ package Model;
 import java.time.LocalDateTime;
 
 public class Aluga {
-    LocalDateTime dataAluguel;
-    LocalDateTime dataDevolucao;
-    float valor;
-    String formaPagamento;
+    private LocalDateTime dataAluguel;
+    private LocalDateTime dataDevolucao;
+    private float valor;
+    private String formaPagamento;
+
+    public Aluga(LocalDateTime dataAluguel, LocalDateTime dataDevolucao, float valor, String formaPagamento) {
+        this.dataAluguel = dataAluguel;
+        this.dataDevolucao = dataDevolucao;
+        this.valor = valor;
+        this.formaPagamento = formaPagamento;
+    }
 
     public LocalDateTime getDataAluguel() {
         return dataAluguel;
@@ -37,5 +44,15 @@ public class Aluga {
 
     public void setFormaPagamento(String formaPagamento) {
         this.formaPagamento = formaPagamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Aluga{" +
+                "dataAluguel=" + dataAluguel +
+                ", dataDevolucao=" + dataDevolucao +
+                ", valor=" + valor +
+                ", formaPagamento='" + formaPagamento + '\'' +
+                '}';
     }
 }

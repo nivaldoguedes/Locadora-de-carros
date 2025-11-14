@@ -2,9 +2,15 @@ package Model;
 import java.time.LocalDateTime;
 
 public class Manutencao {
-    LocalDateTime data;
-    float custo;
-    String detalhesManutencao;
+    private LocalDateTime data;
+    private float custo;
+    private String detalhesManutencao;
+
+    public Manutencao(LocalDateTime data, float custo, String detalhesManutencao) {
+        this.data = data;
+        this.custo = custo;
+        this.detalhesManutencao = detalhesManutencao;
+    }
 
     public LocalDateTime getData() {
         return data;
@@ -28,5 +34,14 @@ public class Manutencao {
 
     public void setDetalhesManutencao(String detalhesManutencao) {
         this.detalhesManutencao = detalhesManutencao;
+    }
+
+    @Override
+    public String toString() {
+        return "Manutencao{" +
+                "data=" + data +
+                ", custo=" + custo +
+                ", detalhesManutencao='" + detalhesManutencao + '\'' +
+                '}';
     }
 }
