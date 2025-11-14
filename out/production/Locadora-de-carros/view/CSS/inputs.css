@@ -1,0 +1,6 @@
+.inputArea{
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(gaussian,#C0C0C0,0,0,1,2);
+    -fx-border-color: transparent;
+    -fx-background-radius: 42px;
+}
