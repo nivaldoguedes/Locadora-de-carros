@@ -52,7 +52,7 @@
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuCadastrarCliente" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Cadastrar Cliente" textFill="#004e98" GridPane.rowIndex="1">
+            <Button fx:id="btnMenuCadastrarCliente" mnemonicParsing="false" onAction="#clickBotaoCadastrarCliente" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Cadastrar Cliente" textFill="#004e98" GridPane.rowIndex="1">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>

@@ -60,12 +60,12 @@
                   <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
                </padding>
             </Button>
-            <Text layoutX="158.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, Bem-Vindo de volta!">
+            <Text layoutX="157.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, Bem-Vindo de volta!" textAlignment="CENTER" wrappingWidth="380.0">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Text>
-            <Text fill="#004e98" layoutX="305.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+            <Text fill="#004e98" layoutX="318.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
                <font>
                   <Font name="Montserrat Bold" size="24.0" />
                </font>
