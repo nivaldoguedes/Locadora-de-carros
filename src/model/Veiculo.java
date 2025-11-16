@@ -1,6 +1,5 @@
-package Model;
+package model;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Veiculo {
     private String placa;
