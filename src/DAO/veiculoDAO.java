@@ -1,7 +1,6 @@
 package DAO;
 
 import model.Veiculo;
-
 import java.sql.*;
 import java.util.*;
 

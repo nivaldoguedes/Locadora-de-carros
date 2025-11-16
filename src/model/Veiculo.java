@@ -1,5 +1,9 @@
 package model;
-import java.util.ArrayList;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 public class Veiculo {
     private String placa;
@@ -9,6 +13,9 @@ public class Veiculo {
     private float quilometragem;
     private String categoria;
     private boolean disponibilidade;
+    private Aluga a1;
+    private Reserva r1;
+    private Manutencao m1;
 
     public Veiculo(String placa, String marca, String modelo, int ano, float quilometragem,
                    String categoria, boolean disponibilidade) {
@@ -76,6 +83,18 @@ public class Veiculo {
     public void setDisponibilidade(boolean disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
+
+    public Aluga getAluga() { return a1; }
+
+    public void setAluga(Aluga a1) { this.a1 = a1; }
+
+    public Reserva getReserva() { return r1; }
+
+    public void setReserva(Reserva r1) { this.r1 = r1; }
+
+    public Manutencao getManutencao(){ return m1; }
+
+    public void setManutencao(Manutencao m1) { this.m1 = m1; }
 
     @Override
     public String toString() {

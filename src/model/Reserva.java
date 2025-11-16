@@ -1,37 +1,49 @@
 package model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Reserva {
-    private LocalDateTime dataReserva;
-    private LocalDateTime dataDevolucao;
+    private LocalDate dataReserva;
+    private LocalDate dataInicioAluguel;
+    private float valor;
+    private Cliente c1;
+    private Veiculo v1;
 
-    public Reserva(LocalDateTime dataReserva, LocalDateTime dataDevolucao) {
+    public Reserva(LocalDate dataReserva, LocalDate dataInicioAluguel, float valor) {
         this.dataReserva = dataReserva;
-        this.dataDevolucao = dataDevolucao;
+        this.dataInicioAluguel = dataInicioAluguel;
+        this.valor = valor;
     }
 
-    public LocalDateTime getDataReserva() {
+    public LocalDate getDataReserva() {
         return dataReserva;
     }
 
-    public void setDataReserva(LocalDateTime dataReserva) {
+    public void setDataReserva(LocalDate dataReserva) {
         this.dataReserva = dataReserva;
     }
 
-    public LocalDateTime getDataDevolucao() {
-        return dataDevolucao;
+    public LocalDate getDataInicioAluguel() { return dataInicioAluguel; }
+
+    public void setDataInicioAluguel(LocalDate dataInicioAluguel) {
+        this.dataInicioAluguel = dataInicioAluguel;
     }
 
-    public void setDataDevolucao(LocalDateTime dataDevolucao) {
-        this.dataDevolucao = dataDevolucao;
-    }
+    public Cliente getCliente() { return c1; }
+
+    public void setCliente(Cliente c1) { this.c1 = c1; }
+
+    public Veiculo getVeiculo() { return v1; }
+
+    public void setVeiculo(Veiculo v1) { this.v1 = v1; }
 
     @Override
     public String toString() {
         return "Reserva{" +
                 "dataReserva=" + dataReserva +
-                ", dataDevolucao=" + dataDevolucao +
+                ", dataInicioAluguel=" + dataInicioAluguel +
                 '}';
     }
 }

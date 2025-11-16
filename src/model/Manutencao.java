@@ -1,22 +1,22 @@
 package model;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Manutencao {
-    private LocalDateTime data;
+    private LocalDate data;
     private float custo;
     private String detalhesManutencao;
 
-    public Manutencao(LocalDateTime data, float custo, String detalhesManutencao) {
+    public Manutencao(LocalDate data, float custo, String detalhesManutencao) {
         this.data = data;
         this.custo = custo;
         this.detalhesManutencao = detalhesManutencao;
     }
 
-    public LocalDateTime getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

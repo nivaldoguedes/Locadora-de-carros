@@ -17,7 +17,7 @@ public class veiculoDAOTest {
                     "Fiat",
                     "Argo",
                     2020,
-                    15000.5f,
+                    16000.5f,
                     "Hatch",
                     true
             );
