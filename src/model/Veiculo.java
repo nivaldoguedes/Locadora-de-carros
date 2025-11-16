@@ -9,14 +9,9 @@ public class Veiculo {
     private float quilometragem;
     private String categoria;
     private boolean disponibilidade;
-    private ArrayList<Manutencao> manutencao;
-    private ArrayList<Devolucao> devolucao;
-    private ArrayList<Aluga> aluga;
-    private ArrayList<Reserva> reserva;
 
     public Veiculo(String placa, String marca, String modelo, int ano, float quilometragem,
-                   String categoria, boolean disponibilidade, ArrayList<Manutencao> manutencao,
-                   ArrayList<Devolucao> devolucao, ArrayList<Aluga> aluga, ArrayList<Reserva> reserva) {
+                   String categoria, boolean disponibilidade) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -24,10 +19,6 @@ public class Veiculo {
         this.quilometragem = quilometragem;
         this.categoria = categoria;
         this.disponibilidade = disponibilidade;
-        this.manutencao = manutencao;
-        this.devolucao = devolucao;
-        this.aluga = aluga;
-        this.reserva = reserva;
     }
 
     public String getPlaca() {
@@ -86,38 +77,6 @@ public class Veiculo {
         this.disponibilidade = disponibilidade;
     }
 
-    public ArrayList<Manutencao> getManutencao() {
-        return manutencao;
-    }
-
-    public void setManutencao(ArrayList<Manutencao> manutencao) {
-        this.manutencao = manutencao;
-    }
-
-    public ArrayList<Devolucao> getDevolucao() {
-        return devolucao;
-    }
-
-    public void setDevolucao(ArrayList<Devolucao> devolucao) {
-        this.devolucao = devolucao;
-    }
-
-    public ArrayList<Aluga> getAluga() {
-        return aluga;
-    }
-
-    public void setAluga(ArrayList<Aluga> aluga) {
-        this.aluga = aluga;
-    }
-
-    public ArrayList<Reserva> getReserva() {
-        return reserva;
-    }
-
-    public void setReserva(ArrayList<Reserva> reserva) {
-        this.reserva = reserva;
-    }
-
     @Override
     public String toString() {
         return "Veiculo{" +
@@ -128,10 +87,6 @@ public class Veiculo {
                 ", quilometragem=" + quilometragem +
                 ", categoria='" + categoria + '\'' +
                 ", disponibilidade=" + disponibilidade +
-                ", manutencao=" + manutencao +
-                ", devolucao=" + devolucao +
-                ", aluga=" + aluga +
-                ", reserva=" + reserva +
                 '}';
     }
 }

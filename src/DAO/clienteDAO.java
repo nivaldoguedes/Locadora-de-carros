@@ -18,7 +18,6 @@ public class clienteDAO {
             pstmt.setString(2, c1.getNome());
             pstmt.setString(3, c1.getFormaPagamento());
             pstmt.setString(4, c1.getTelefone());
-
             pstmt.executeUpdate();
         }
     }
@@ -41,7 +40,6 @@ public class clienteDAO {
                 clientes.add(c1);
             }
         }
-
         return clientes;
     }
 
@@ -56,7 +54,6 @@ public class clienteDAO {
             pstmt.setString(2, c1.getFormaPagamento());
             pstmt.setString(3, c1.getTelefone());
             pstmt.setString(4, c1.getCPF());
-
             int rowsAffected = pstmt.executeUpdate();
 
             if (rowsAffected > 0) {
