@@ -1,23 +1,23 @@
 package model;
 
 public class Cliente {
-    private int CPF;
+    private String CPF;
     private String nome;
     private String formaPagamento;
     private String telefone;
 
-    public Cliente(int CPF, String nome, String formaPagamento, String telefone) {
+    public Cliente(String CPF, String nome, String formaPagamento, String telefone) {
         this.CPF = CPF;
         this.nome = nome;
         this.formaPagamento = formaPagamento;
         this.telefone = telefone;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 

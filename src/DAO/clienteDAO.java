@@ -1,25 +1,30 @@
 package DAO;
+
 import model.Cliente;
 import java.util.*;
 import java.sql.*;
 
 public class clienteDAO {
-    private static final String c = "cliente";
+
+    private static final String TABLE = "cliente";
 
     public void createCliente(Cliente c1) throws SQLException {
-        String SQL = "INSERT into " +c+ "(cpf, nome, formas_pagamento, telefone) values (?, ?, ?, ?)";
+        String SQL = "INSERT INTO " + TABLE + " (cpf, nome, formaPagamento, telefone) VALUES (?, ?, ?, ?)";
+
         try (Connection connection = ConnectionFactory.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(SQL)) {
-                pstmt.setInt(1, c1.getCPF());
-                pstmt.setString(2, c1.getNome());
-                pstmt.setString(3, c1.getFormaPagamento());
-                pstmt.setString(4, c1.getTelefone());
-                pstmt.executeUpdate();
-            }
+             PreparedStatement pstmt = connection.prepareStatement(SQL)) {
+
+            pstmt.setString(1, c1.getCPF());
+            pstmt.setString(2, c1.getNome());
+            pstmt.setString(3, c1.getFormaPagamento());
+            pstmt.setString(4, c1.getTelefone());
+
+            pstmt.executeUpdate();
+        }
     }
 
     public List<Cliente> getClientes() throws SQLException {
-        String SQL = "SELECT * from " +c;
+        String SQL = "SELECT * FROM " + TABLE;
         List<Cliente> clientes = new ArrayList<>();
 
         try (Connection connection = ConnectionFactory.getConnection();
@@ -28,27 +33,30 @@ public class clienteDAO {
 
             while (rs.next()) {
                 Cliente c1 = new Cliente(
-                        rs.getInt("cpf"),
+                        rs.getString("cpf"),
                         rs.getString("nome"),
-                        rs.getString("formas_pagamento"),
+                        rs.getString("formaPagamento"),
                         rs.getString("telefone")
                 );
                 clientes.add(c1);
             }
-            return clientes;
         }
+
+        return clientes;
     }
 
     public void updateCliente(Cliente c1) throws SQLException {
-        String SQL = "UPDATE " +c+ " SET cpf = ?, nome = ?, formas_pagamento = ?, telefone = ? WHERE cpf = ?";
+        String SQL = "UPDATE " + TABLE +
+                " SET nome = ?, formaPagamento = ?, telefone = ? WHERE cpf = ?";
 
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(SQL)) {
-            pstmt.setInt(1, c1.getCPF());
-            pstmt.setString(2, c1.getNome());
-            pstmt.setString(3, c1.getFormaPagamento());
-            pstmt.setString(4, c1.getTelefone());
-            pstmt.setInt(5, c1.getCPF());
+
+            pstmt.setString(1, c1.getNome());
+            pstmt.setString(2, c1.getFormaPagamento());
+            pstmt.setString(3, c1.getTelefone());
+            pstmt.setString(4, c1.getCPF());
+
             int rowsAffected = pstmt.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -60,11 +68,12 @@ public class clienteDAO {
     }
 
     public void deleteCliente(Cliente c1) throws SQLException {
-        String SQL = "DELETE from " +c+ " WHERE cpf = ?";
+        String SQL = "DELETE FROM " + TABLE + " WHERE cpf = ?";
 
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(SQL)) {
-            pstmt.setInt(1, c1.getCPF());
+
+            pstmt.setString(1, c1.getCPF());
             int rowsAffected = pstmt.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -75,4 +84,3 @@ public class clienteDAO {
         }
     }
 }
-
