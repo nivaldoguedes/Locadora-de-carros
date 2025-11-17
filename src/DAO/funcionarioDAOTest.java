@@ -13,7 +13,7 @@ public class funcionarioDAOTest {
             System.out.println("--- 1. TESTE DE INSERÇÃO ---");
 
             Funcionario novo = new Funcionario(
-                    "1234567890",
+                    "12345675890",
                     "Maria Oliveira",
                     "senha123"
             );

@@ -15,7 +15,6 @@ public class alugaDAO {
     private static final String TABLE = "aluga";
 
     public void createAluga(Aluga a1) throws SQLException {
-
         String getClienteSQL = "SELECT id FROM cliente WHERE cpf = ?";
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
         String SQL = "INSERT INTO " + TABLE +
@@ -23,9 +22,7 @@ public class alugaDAO {
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
-
             int idCliente = 0;
-
             // Buscar ID do cliente
             try (PreparedStatement pstmt = connection.prepareStatement(getClienteSQL)) {
                 pstmt.setString(1, a1.getCliente().getCPF());

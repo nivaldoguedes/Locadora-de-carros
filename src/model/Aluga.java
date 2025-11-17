@@ -54,13 +54,9 @@ public class Aluga {
         this.formaPagamento = formaPagamento;
     }
 
-    public float getQuilometragemFinal() {
-        return quilometragemFinal;
-    }
+    public float getQuilometragemFinal() { return quilometragemFinal; }
 
-    public void setQuilometragemFinal(float quilometragemFinal) {
-        this.quilometragemFinal = quilometragemFinal;
-    }
+    public void setQuilometragemFinal(float quilometragemFinal) { this.quilometragemFinal = quilometragemFinal; }
 
     public String getDanos() { return danos; }
 

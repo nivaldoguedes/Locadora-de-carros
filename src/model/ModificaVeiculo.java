@@ -15,7 +15,7 @@ public class ModificaVeiculo {
         return !inicio1.isAfter(fim2) && !inicio2.isAfter(fim1);
     }
 
-    public Aluga locarVeiculo(Veiculo v1) {
+    public Aluga locarVeiculo(Aluga a1) {
         Map<String, Float> categorias = new HashMap<>();
         categorias.put("Hatch", 80.0F);
         categorias.put("Sedan", 100.0F);
@@ -31,7 +31,7 @@ public class ModificaVeiculo {
 
         // 1 — Verificar conflitos com reservas
         for (Reserva r : reservas) {
-            if (r.getVeiculo().equals(v1)) {
+            if (r.getVeiculo().equals(a1)) {
                 if (datasConflitam(dataAluguel, dataDevolucao,
                         r.getDataReserva(), r.getDataInicioAluguel())) {
                     throw new IllegalStateException("Este veículo está reservado nesse período.");
@@ -40,25 +40,24 @@ public class ModificaVeiculo {
         }
 
         // 2 — Verificar se está disponível
-        if (!v1.isDisponibilidade()) {
+        if (!a1.getVeiculo().isDisponibilidade()) {
             throw new IllegalStateException("Veículo indisponível");
         }
 
         // Calcular valor
-        float valorDiaria = categorias.get(v1.getCategoria());
+        float valorDiaria = categorias.get(a1.getVeiculo().getCategoria());
         float valor = ChronoUnit.DAYS.between(dataAluguel, dataDevolucao) * valorDiaria;
-
         System.out.print("Forma de pagamento: ");
         String formaPagamento = sc.nextLine();
 
         Aluga aluguel = new Aluga(dataAluguel, dataDevolucao, valor, formaPagamento);
         alugueis.add(aluguel);
-        v1.setDisponibilidade(false);
+        a1.getVeiculo().setDisponibilidade(false);
 
         return aluguel;
     }
 
-    public Reserva reservarVeiculo(Veiculo v1) {
+    public Reserva reservarVeiculo(Aluga a1) {
         Map<String, Float> categorias = new HashMap<>();
         categorias.put("Hatch", 80.0F);
         categorias.put("Sedan", 100.0F);
@@ -74,7 +73,7 @@ public class ModificaVeiculo {
 
         // 1 — Verificar conflitos com locações
         for (Aluga a : alugueis) {
-            if (a.getVeiculo().equals(v1)) {
+            if (a.getVeiculo().equals(a1)) {
                 if (datasConflitam(dataReserva, dataInicioAluguel,
                         a.getDataAluguel(), a.getDataDevolucao())) {
                     throw new IllegalStateException("Este veículo está locado nesse período.");
@@ -83,7 +82,7 @@ public class ModificaVeiculo {
         }
 
         // calcular valor
-        float valorDiaria = categorias.get(v1.getCategoria());
+        float valorDiaria = categorias.get(a1.getVeiculo().getCategoria());
         float valor = ChronoUnit.DAYS.between(dataReserva, dataInicioAluguel) * valorDiaria;
 
         Reserva r1 = new Reserva(dataReserva, dataInicioAluguel, valor);
@@ -92,7 +91,7 @@ public class ModificaVeiculo {
         return r1;
     }
 
-    public void devolverVeiculo(Veiculo v1) {
+    public void devolverVeiculo(Aluga a1) {
         Scanner sc = new Scanner(System.in);
 
         // Solicitar quilometragem final
@@ -100,7 +99,7 @@ public class ModificaVeiculo {
         float quilometragemFinal = Float.parseFloat(sc.nextLine());
 
         // Atualizar a quilometragem atual do veículo
-        v1.setQuilometragem(quilometragemFinal);
+        a1.getVeiculo().setQuilometragem(quilometragemFinal);
 
         // Solicitar descrição de danos (opcional)
         System.out.print("Digite danos ao veículo (opcional, pressione Enter se não houver): ");
@@ -114,12 +113,12 @@ public class ModificaVeiculo {
         }
 
         // Tornar o veículo disponível novamente
-        v1.setDisponibilidade(true);
+        a1.getVeiculo().setDisponibilidade(true);
 
         System.out.println("Devolução registrada com sucesso!");
     }
 
-    public void manutencaoVeiculo(Veiculo v1) {
+    public void manutencaoVeiculo(Aluga a1) {
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -130,6 +129,6 @@ public class ModificaVeiculo {
         System.out.print("Digite os detalhes da manutenção do veículo: ");
         String detalhesManutencao = sc.nextLine();
 
-        v1.setDisponibilidade(false);
+        a1.getVeiculo().setDisponibilidade(false);
     }
 }

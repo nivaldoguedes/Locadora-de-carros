@@ -31,6 +31,10 @@ public class Reserva {
         this.dataInicioAluguel = dataInicioAluguel;
     }
 
+    public float getValor() { return valor; }
+
+    public void setValor(float valor) { this.valor = valor; }
+
     public Cliente getCliente() { return c1; }
 
     public void setCliente(Cliente c1) { this.c1 = c1; }

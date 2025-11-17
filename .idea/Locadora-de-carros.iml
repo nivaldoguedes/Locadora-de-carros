@@ -18,5 +18,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="file:///opt/jBCrypt" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file:///opt/jBCrypt" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
