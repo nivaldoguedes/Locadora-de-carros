@@ -14,11 +14,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
+
 import java.io.IOException;
 
 public class RegistrarManutencaoController {
 
-    // --- Variáveis FXML ---
     @FXML
     private TextField inputVeiculo;
 
@@ -40,14 +40,6 @@ public class RegistrarManutencaoController {
     @FXML
     private Button botaoVoltar;
 
-    // (O botão Sair precisa ser referenciado no FXML, ou usaremos o handleSair com o event)
-
-
-    // --- Métodos de Ação (onAction) ---
-
-    /**
-     * Lida com o clique do botão "Registrar Manutenção".
-     */
     @FXML
     private void handleRegistrarManutencao(ActionEvent event) {
         // 1. Coleta dos dados
@@ -82,10 +74,6 @@ public class RegistrarManutencaoController {
         navegarPara(event, "/view/menu.fxml", "Menu Principal");
     }
 
-    /**
-     * Lida com o clique do botão "Sair", fechando a aplicação.
-     * Este é o método que faltava e causava o erro.
-     */
     @FXML
     private void handleSair(ActionEvent event) {
         // Fecha o Stage (janela) atual
@@ -93,7 +81,6 @@ public class RegistrarManutencaoController {
         stage.close();
     }
 
-    // --- Métodos Auxiliares ---
 
     private void limparCampos() {
         inputVeiculo.clear();
