@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,16 +18,35 @@ public class alugaDAO {
     public void createAluga(Aluga a1) throws SQLException {
         String getClienteSQL = "SELECT id FROM cliente WHERE cpf = ?";
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
+        String checkAlugaSQL =
+                "SELECT COUNT(*) AS total FROM aluga " +
+                        "WHERE idVeiculo = ? " +
+                        "AND dataAluguel <= ? " +
+                        "AND dataDevolucao >= ?";
+
+        String checkReservaSQL =
+                "SELECT COUNT(*) AS total FROM reserva " +
+                        "WHERE idVeiculo = ? " +
+                        "AND dataReserva <= ? " +
+                        "AND dataDevolucao >= ?";
+
+        String getCustoSQL =
+                "SELECT c.custo " +
+                        "FROM veiculo v " +
+                        "JOIN categoria c ON v.categoria = c.modelo " +
+                        "WHERE v.id = ?";
+
         String SQL = "INSERT INTO " + TABLE +
                 " (idCliente, idVeiculo, dataAluguel, dataDevolucao, valor, formaPagamento) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
             int idCliente = 0;
+            int idVeiculo = 0;
+
             // Buscar ID do cliente
             try (PreparedStatement pstmt = connection.prepareStatement(getClienteSQL)) {
                 pstmt.setString(1, a1.getCliente().getCPF());
-
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) {
                         idCliente = rs.getInt("id");
@@ -37,15 +57,59 @@ public class alugaDAO {
             }
 
             // Buscar ID do veículo
-            int idVeiculo = 0;
             try (PreparedStatement pstmt = connection.prepareStatement(getVeiculoSQL)) {
                 pstmt.setString(1, a1.getVeiculo().getPlaca());
-
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) {
                         idVeiculo = rs.getInt("id");
                     } else {
                         throw new SQLException("Veículo não encontrado: " + a1.getVeiculo().getPlaca());
+                    }
+                }
+            }
+
+            // Buscar custo da categoria do veículo
+            float custoCategoria = 0;
+
+            try (PreparedStatement pstmt = connection.prepareStatement(getCustoSQL)) {
+                pstmt.setInt(1, idVeiculo);
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next()) {
+                        custoCategoria = rs.getFloat("custo");
+                    } else {
+                        throw new SQLException("Categoria do veículo não encontrada.");
+                    }
+                }
+            }
+
+            // Calcular valor total do aluguel
+            long dias = ChronoUnit.DAYS.between(a1.getDataAluguel(), a1.getDataDevolucao());
+            if (dias <= 0) dias = 1;
+
+            float valorFinal = dias * custoCategoria;
+            a1.setValor(valorFinal); // substituir o valor enviado pelo cálculo
+
+            // Verificar se o carro já está alugado no período solicitado
+            try (PreparedStatement pstmt = connection.prepareStatement(checkAlugaSQL)) {
+                pstmt.setInt(1, idVeiculo);
+                pstmt.setDate(2, java.sql.Date.valueOf(a1.getDataDevolucao()));
+                pstmt.setDate(3, java.sql.Date.valueOf(a1.getDataAluguel()));
+
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next() && rs.getInt("total") > 0) {
+                        throw new SQLException("O veículo está alugado na data informada.");
+                    }
+                }
+            }
+            // Verificar se o carro já está reservado no período solicitado
+            try (PreparedStatement pstmt = connection.prepareStatement(checkReservaSQL)) {
+                pstmt.setInt(1, idVeiculo);
+                pstmt.setDate(2, java.sql.Date.valueOf(a1.getDataDevolucao()));
+                pstmt.setDate(3, java.sql.Date.valueOf(a1.getDataAluguel()));
+
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next() && rs.getInt("total") > 0) {
+                        throw new SQLException("O veículo está reservado na data informada.");
                     }
                 }
             }
@@ -56,9 +120,8 @@ public class alugaDAO {
                 pstmt.setInt(2, idVeiculo);
                 pstmt.setDate(3, java.sql.Date.valueOf(a1.getDataAluguel()));
                 pstmt.setDate(4, java.sql.Date.valueOf(a1.getDataDevolucao()));
-                pstmt.setFloat(5, a1.getValor());
+                pstmt.setFloat(5, valorFinal);
                 pstmt.setString(6, a1.getFormaPagamento());
-
                 pstmt.executeUpdate();
             }
         }
