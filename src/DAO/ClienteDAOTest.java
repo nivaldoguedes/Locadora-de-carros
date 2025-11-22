@@ -4,10 +4,10 @@ import model.Cliente;
 import java.sql.SQLException;
 import java.util.List;
 
-public class clienteDAOTest {
+public class ClienteDAOTest {
 
     public static void main(String[] args) {
-        clienteDAO dao = new clienteDAO();
+        ClienteDAO dao = new ClienteDAO();
 
         try {
             System.out.println("--- 1. TESTE DE INSERÇÃO ---");

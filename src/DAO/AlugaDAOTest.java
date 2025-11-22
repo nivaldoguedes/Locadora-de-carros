@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class alugaDAOTest {
+public class AlugaDAOTest {
 
     public static void main(String[] args) {
-        alugaDAO dao = new alugaDAO();
+        AlugaDAO dao = new AlugaDAO();
 
         try {
             System.out.println("--- 1. TESTE DE INSERÇÃO DE ALUGUEL ---");

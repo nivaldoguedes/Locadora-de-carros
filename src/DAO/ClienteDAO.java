@@ -4,7 +4,7 @@ import model.Cliente;
 import java.util.*;
 import java.sql.*;
 
-public class clienteDAO {
+public class ClienteDAO {
 
     private static final String TABLE = "cliente";
 

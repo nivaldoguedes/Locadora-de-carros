@@ -14,7 +14,6 @@ public class Veiculo {
     private String categoria;
     private boolean disponibilidade;
     private Aluga a1;
-    private Reserva r1;
     private Manutencao m1;
 
     public Veiculo(String placa, String marca, String modelo, int ano, float quilometragem,
@@ -87,10 +86,6 @@ public class Veiculo {
     public Aluga getAluga() { return a1; }
 
     public void setAluga(Aluga a1) { this.a1 = a1; }
-
-    public Reserva getReserva() { return r1; }
-
-    public void setReserva(Reserva r1) { this.r1 = r1; }
 
     public Manutencao getManutencao(){ return m1; }
 

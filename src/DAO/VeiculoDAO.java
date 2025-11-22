@@ -4,7 +4,7 @@ import model.Veiculo;
 import java.sql.*;
 import java.util.*;
 
-public class veiculoDAO {
+public class VeiculoDAO {
     private static final String TABLE = "veiculo";
 
     public void createVeiculo(Veiculo v1) throws SQLException {

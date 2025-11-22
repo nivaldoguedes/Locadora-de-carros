@@ -12,10 +12,10 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class alugaDAO {
-    private static final String TABLE = "aluga";
+public class ReservaDAO {
+    private static final String TABLE = "reserva";
 
-    public void createAluga(Aluga a1) throws SQLException {
+    public void createReserva(Aluga a1) throws SQLException {
         String getClienteSQL = "SELECT id FROM cliente WHERE cpf = ?";
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
         String checkAlugaSQL =
@@ -37,7 +37,7 @@ public class alugaDAO {
                         "WHERE v.id = ?";
 
         String SQL = "INSERT INTO " + TABLE +
-                " (idCliente, idVeiculo, dataAluguel, dataDevolucao, valor, formaPagamento) " +
+                " (idCliente, idVeiculo, dataReserva, dataDevolucao, valor, formaPagamento) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
@@ -114,7 +114,7 @@ public class alugaDAO {
                 }
             }
 
-            // Inserir aluguel
+            // Inserir reserva
             try (PreparedStatement pstmt = connection.prepareStatement(SQL)) {
                 pstmt.setInt(1, idCliente);
                 pstmt.setInt(2, idVeiculo);
@@ -127,8 +127,8 @@ public class alugaDAO {
         }
     }
 
-    public List<Veiculo> getAlugueis() throws SQLException {
-        String SQL = "SELECT a1.*, v1.*, c1.* FROM aluga a1 " +
+    public List<Veiculo> getReservas() throws SQLException {
+        String SQL = "SELECT a1.*, v1.*, c1.* FROM reserva a1 " +
                 "JOIN veiculo v1 ON a1.idVeiculo = v1.id " +
                 "JOIN cliente c1 ON a1.idCliente = c1.id";
 
@@ -159,9 +159,9 @@ public class alugaDAO {
                         rs.getBoolean("disponibilidade")
                 );
 
-                // Criar Aluga
+                // Criar Reserva
                 Aluga a1 = new Aluga(
-                        rs.getDate("dataAluguel").toLocalDate(),
+                        rs.getDate("dataReserva").toLocalDate(),
                         rs.getDate("dataDevolucao").toLocalDate(),
                         rs.getFloat("valor"),
                         rs.getString("formaPagamento")
@@ -178,10 +178,10 @@ public class alugaDAO {
     }
 
     // Faz a devoulução do veículo
-    public void updateAluga(Aluga a1) throws SQLException {
+    public void updateReserva(Aluga a1) throws SQLException {
 
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
-        String updateSQL = "UPDATE aluga SET quilometragemFinal = ?, danos = ? WHERE idVeiculo = ?";
+        String updateSQL = "UPDATE reserva SET quilometragemFinal = ?, danos = ? WHERE idVeiculo = ?";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
 
@@ -205,10 +205,10 @@ public class alugaDAO {
         }
     }
 
-    public void deleteAluga(Aluga a1) throws SQLException {
+    public void deleteReserva(Aluga a1) throws SQLException {
 
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
-        String deleteSQL = "DELETE FROM aluga WHERE idVeiculo = ?";
+        String deleteSQL = "DELETE FROM reserva WHERE idVeiculo = ?";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
 

@@ -5,6 +5,7 @@ public class Manutencao {
     private LocalDate data;
     private float custo;
     private String detalhesManutencao;
+    private Veiculo v1;
 
     public Manutencao(LocalDate data, float custo, String detalhesManutencao) {
         this.data = data;
@@ -35,6 +36,10 @@ public class Manutencao {
     public void setDetalhesManutencao(String detalhesManutencao) {
         this.detalhesManutencao = detalhesManutencao;
     }
+
+    public Veiculo getVeiculo() { return v1; }
+
+    public void setVeiculo(Veiculo v1) { this.v1 = v1; }
 
     @Override
     public String toString() {

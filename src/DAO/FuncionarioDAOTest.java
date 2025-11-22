@@ -4,10 +4,10 @@ import model.Funcionario;
 import java.sql.SQLException;
 import java.util.List;
 
-public class funcionarioDAOTest {
+public class FuncionarioDAOTest {
 
     public static void main(String[] args) {
-        funcionarioDAO dao = new funcionarioDAO();
+        FuncionarioDAO dao = new FuncionarioDAO();
 
         try {
             System.out.println("--- 1. TESTE DE INSERÇÃO ---");

@@ -6,7 +6,7 @@ import util.PasswordUtils;
 import java.util.*;
 import java.sql.*;
 
-public class funcionarioDAO {
+public class FuncionarioDAO {
 
     private static final String TABLE = "funcionario";
 

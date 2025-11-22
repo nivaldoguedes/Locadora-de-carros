@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class categoriaDAO {
+public class CategoriaDAO {
     public Map<String, Float> getCusto() throws SQLException {
         String SQL = "SELECT * FROM categoria";
 

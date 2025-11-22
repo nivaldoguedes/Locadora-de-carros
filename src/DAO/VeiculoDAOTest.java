@@ -4,10 +4,10 @@ import model.Veiculo;
 import java.sql.SQLException;
 import java.util.List;
 
-public class veiculoDAOTest {
+public class VeiculoDAOTest {
 
     public static void main(String[] args) {
-        veiculoDAO dao = new veiculoDAO();
+        VeiculoDAO dao = new VeiculoDAO();
 
         try {
             System.out.println("--- 1. TESTE DE INSERÇÃO ---");
