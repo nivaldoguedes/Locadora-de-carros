@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -54,6 +57,22 @@
                   <Font name="Montserrat Regular" size="14.0" />
                </font>
             </TextField>
+             <!-- Forma de pagamento -->
+             <Text layoutX="562.0" layoutY="240.0" text="Categoria">
+                 <font><Font name="Montserrat Bold" size="15" /></font>
+             </Text>
+
+             <ComboBox fx:id="comboCategoria" layoutX="540.0" layoutY="244.0" prefHeight="48" prefWidth="380" styleClass="inputArea" stylesheets="@CSS/inputs.css">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Hatch" />
+                         <String fx:value="Sedan" />
+                         <String fx:value="SUV" />
+                     </FXCollections>
+                 </items>
+                 <padding><Insets left="24" /></padding>
+             </ComboBox>
+
             <Text layoutX="562.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo">
                <font>
                   <Font name="Montserrat Bold" size="15.0" />
@@ -80,6 +99,11 @@
                   <Font name="Montserrat Regular" size="14.0" />
                </font>
             </TextField>
+             <Text fx:id="avisoCadastro" fill="#D00000"
+                   layoutX="122.0" layoutY="315.0"
+                   strokeWidth="0" text="">
+                 <font><Font name="Montserrat Bold" size="14"/></font>
+             </Text>
             <Button fx:id="botaoVoltar" alignment="CENTER" layoutX="100.0" layoutY="398.0" mnemonicParsing="false" onAction="#clickBotaoVoltar" styleClass="botaoVoltar" stylesheets="@CSS/botoes.css" text="Voltar" textAlignment="CENTER" textFill="#004e98">
                <padding>
                   <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
@@ -95,7 +119,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="botaoCadastrarVeiculo" layoutX="790.0" layoutY="398.0" mnemonicParsing="false" style="-fx-background-color: #004E98; -fx-background-radius: 42px; -fx-cursor: hand;" text="Cadastrar" textFill="WHITE">
+            <Button fx:id="botaoCadastrarVeiculo" layoutX="790.0" layoutY="398.0" mnemonicParsing="false" onAction="#clickBotaoCadastrarVeiculo" style="-fx-background-color: #004E98; -fx-background-radius: 42px; -fx-cursor: hand;" text="Cadastrar" textFill="WHITE">
                <font>
                   <Font name="Montserrat Bold" size="16.0" />
                </font>
