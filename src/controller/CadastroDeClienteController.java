@@ -34,4 +34,8 @@ public class CadastroDeClienteController {
         SceneNavegacao.navegar(event, "/view/menu.fxml",  "Menu");
     }
 
+    void clickBotaoCadastrar() {
+
+    }
+
 }

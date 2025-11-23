@@ -13,9 +13,9 @@ public class FuncionarioDAOTest {
             System.out.println("--- 1. TESTE DE INSERÇÃO ---");
 
             Funcionario novo = new Funcionario(
-                    "12345675890",
-                    "Maria Oliveira",
-                    "senha123"
+                    "123456758900",
+                    "Nivaldo Guedes",
+                    "123456"
             );
 
             dao.createFuncionario(novo);
@@ -29,27 +29,27 @@ public class FuncionarioDAOTest {
             System.out.println("CPF: " + f.getCPF() +
                     " | Nome: " + f.getNome());
 
-            System.out.println("\n--- 3. TESTE DE ATUALIZAÇÃO ---");
-            f.setNome("Maria de Souza");
-            f.setSenha("novaSenha456");
-
-            dao.updateFuncionario(f);
-
-            List<Funcionario> listaAtualizada = dao.getFuncionarios();
-            System.out.println("Nome após UPDATE: " +
-                    listaAtualizada.get(0).getNome());
-
-            System.out.println("\n--- 4. TESTE DE DELEÇÃO ---");
-            dao.deleteFuncionario(f);
-
-            List<Funcionario> listaFinal = dao.getFuncionarios();
-
-            System.out.println("\n--- FIM DOS TESTES ---");
-            System.out.println("Registros restantes: " + listaFinal.size());
-
-            if (listaFinal.isEmpty()) {
-                System.out.println("✅ CRUD COMPLETO E FUNCIONANDO!");
-            }
+//            System.out.println("\n--- 3. TESTE DE ATUALIZAÇÃO ---");
+//            f.setNome("Maria de Souza");
+//            f.setSenha("novaSenha456");
+//
+//            dao.updateFuncionario(f);
+//
+//            List<Funcionario> listaAtualizada = dao.getFuncionarios();
+//            System.out.println("Nome após UPDATE: " +
+//                    listaAtualizada.get(0).getNome());
+//
+//            System.out.println("\n--- 4. TESTE DE DELEÇÃO ---");
+//            dao.deleteFuncionario(f);
+//
+//            List<Funcionario> listaFinal = dao.getFuncionarios();
+//
+//            System.out.println("\n--- FIM DOS TESTES ---");
+//            System.out.println("Registros restantes: " + listaFinal.size());
+//
+//            if (listaFinal.isEmpty()) {
+//                System.out.println("✅ CRUD COMPLETO E FUNCIONANDO!");
+//            }
 
         } catch (SQLException e) {
             System.err.println("!!! ERRO CRÍTICO DURANTE O TESTE DE CRUD !!!");

@@ -62,7 +62,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="botaoCadastrarCliente" layoutX="790.0" layoutY="398.0" mnemonicParsing="false" style="-fx-background-color: #004E98; -fx-background-radius: 42px; -fx-cursor: hand;" text="Cadastrar" textFill="WHITE">
+            <Button fx:id="botaoCadastrarCliente" layoutX="790.0" layoutY="398.0" mnemonicParsing="false" onAction="#clickBotaoCadastrar" style="-fx-background-color: #004E98; -fx-background-radius: 42px; -fx-cursor: hand;" text="Cadastrar" textFill="WHITE">
                <font>
                   <Font name="Montserrat Bold" size="16.0" />
                </font>

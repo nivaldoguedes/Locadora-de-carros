@@ -88,4 +88,33 @@ public class FuncionarioDAO {
             }
         }
     }
+
+    public Funcionario autenticar(String cpf, String senhaDigitada) throws SQLException {
+        String SQL = "SELECT cpf, nome, senhaHash, salt FROM funcionario WHERE cpf = ?";
+
+        try (Connection connection = ConnectionFactory.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(SQL)) {
+
+            pstmt.setString(1, cpf);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+
+                String hashBanco = rs.getString("senhahash");
+                String saltBanco = rs.getString("salt");
+
+                boolean senhaCorreta = PasswordUtils.checkPassword(senhaDigitada, hashBanco, saltBanco);
+
+                if (senhaCorreta) {
+                    return new Funcionario(
+                            rs.getString("cpf"),
+                            rs.getString("nome"),
+                            null // não retorna senha
+                    );
+                }
+            }
+        }
+
+        return null; // usuário inexistente ou senha incorreta
+    }
 }
