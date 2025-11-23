@@ -1,0 +1,13 @@
+.botaoVoltar{
+    -fx-background-color:  #fff;
+    -fx-background-radius: 42px;
+    -fx-cursor: hand;
+}
+
+.botaoVoltar:hover{
+    -fx-background-color: #e0e0e0;
+}
+
+.botaoVoltar:pressed{
+    -fx-background-color: #B3B3B3;
+}
