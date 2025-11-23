@@ -62,7 +62,7 @@
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuDevolucao" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Devolução" textFill="#004e98" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btnMenuDevolucao" mnemonicParsing="false" onAction="#clickBotaoDevolucao" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Devolução" textFill="#004e98" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
