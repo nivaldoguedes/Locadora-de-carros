@@ -87,7 +87,7 @@
             <image><Image url="@imagens/logomarca.png" /></image>
         </ImageView>
 
-        <Text fill="WHITE" layoutX="443" layoutY="123" text="Cadastro de Cliente">
+        <Text fill="WHITE" layoutX="443" layoutY="123" text="Cadastro de cliente">
             <font><Font name="Montserrat Bold" size="28" /></font>
         </Text>
 

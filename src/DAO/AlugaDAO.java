@@ -86,7 +86,8 @@ public class AlugaDAO {
     public List<Veiculo> getAlugueis() throws SQLException {
         String SQL = "SELECT a1.*, v1.*, c1.* FROM aluga a1 " +
                 "JOIN veiculo v1 ON a1.idVeiculo = v1.id " +
-                "JOIN cliente c1 ON a1.idCliente = c1.id";
+                "JOIN cliente c1 ON a1.idCliente = c1.id " +
+                "WHERE v1.disponibilidade = FALSE";
 
         List<Veiculo> alugueis = new ArrayList<>();
 
@@ -134,12 +135,13 @@ public class AlugaDAO {
     // Faz a devoulução do veículo
     public void updateAluga(Aluga a1) throws SQLException {
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
-        String updateSQL = "UPDATE aluga SET quilometragemFinal = ?, danos = ? WHERE idVeiculo = ?";
+        String updateSQL = "UPDATE aluga SET quilometragemFinal = ?, danos = ?, dataDevolucao = ? WHERE idVeiculo = ?";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
 
             int id = 0;
 
+            // Buscar ID do veículo
             try (PreparedStatement pstmt = connection.prepareStatement(getVeiculoSQL)) {
                 pstmt.setString(1, a1.getVeiculo().getPlaca());
 
@@ -148,12 +150,19 @@ public class AlugaDAO {
                 }
             }
 
+            // Atualizar aluguel
             try (PreparedStatement pstmt = connection.prepareStatement(updateSQL)) {
                 pstmt.setFloat(1, a1.getQuilometragemFinal());
                 pstmt.setString(2, a1.getDanos());
-                pstmt.setInt(3, id);
+                pstmt.setDate(3, java.sql.Date.valueOf(a1.getDataDevolucao())); // adicionar dataDevolucao
+                pstmt.setInt(4, id);
 
-                pstmt.executeUpdate();
+                int rowsAffected = pstmt.executeUpdate();
+                if (rowsAffected > 0) {
+                    System.out.println("Aluguel atualizado com sucesso!");
+                } else {
+                    System.out.println("Nenhum aluguel encontrado para atualização.");
+                }
             }
         }
     }

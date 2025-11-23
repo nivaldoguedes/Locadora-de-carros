@@ -56,7 +56,7 @@
                 <Image url="@imagens/logomarca.png" />
             </image>
         </ImageView>
-        <Text fill="WHITE" layoutX="491.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerar Relatórios" textAlignment="CENTER">
+        <Text fill="WHITE" layoutX="491.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerar relatórios" textAlignment="CENTER">
             <font>
                 <Font name="Montserrat Bold" size="28.0" />
             </font>

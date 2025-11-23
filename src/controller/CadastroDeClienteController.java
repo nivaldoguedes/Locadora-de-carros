@@ -15,30 +15,14 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class CadastroDeClienteController {
-
-    @FXML
-    private ComboBox<String> comboFormaPagamento;
-
-    @FXML
-    private Button botaoCadastrarCliente;
-
-    @FXML
-    private Button botaoSair;
-
-    @FXML
-    private Button botaoVoltar;
-
-    @FXML
-    private TextField inputCPF;
-
-    @FXML
-    private TextField inputNome;
-
-    @FXML
-    private TextField inputTelefone;
-
-    @FXML
-    private Text avisoCadastro;
+    @FXML private ComboBox<String> comboFormaPagamento;
+    @FXML private Button botaoCadastrarCliente;
+    @FXML private Button botaoSair;
+    @FXML private Button botaoVoltar;
+    @FXML private TextField inputCPF;
+    @FXML private TextField inputNome;
+    @FXML private TextField inputTelefone;
+    @FXML private Text avisoCadastro;
 
     @FXML
     void clickBotaoSair(ActionEvent event) throws IOException {

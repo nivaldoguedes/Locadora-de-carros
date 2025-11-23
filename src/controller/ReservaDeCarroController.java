@@ -3,7 +3,6 @@ package controller;
 import DAO.AlugaDAO;
 import DAO.ClienteDAO;
 import DAO.VeiculoDAO;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,7 +16,6 @@ import model.Veiculo;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -75,6 +73,7 @@ public class ReservaDeCarroController {
                         .distinct()
                         .sorted()
                         .collect(Collectors.toList());
+                comboCategoria.getItems().clear();
                 comboCategoria.getItems().addAll(categorias);
             }
         } catch (SQLException e) {

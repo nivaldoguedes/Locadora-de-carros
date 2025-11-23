@@ -137,7 +137,7 @@
             <Image url="@imagens/logomarca.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="443.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Veículo" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="443.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de veículo" textAlignment="CENTER">
          <font>
             <Font name="Montserrat Bold" size="28.0" />
          </font>
