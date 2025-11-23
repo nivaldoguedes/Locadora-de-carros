@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1180.0" style="-fx-background-color: #004E98;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DevolucaoController">
+    <children>
+        <AnchorPane layoutX="80.0" layoutY="176.0" prefHeight="494.0" prefWidth="1020.0" style="-fx-background-color: #F2F2F2; -fx-background-radius: 42px;">
+            <children>
+                <Text layoutX="117.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veículo">
+                    <font>
+                        <Font name="Montserrat Bold" size="15.0" />
+                    </font>
+                </Text>
+                <Text layoutX="118.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Montserrat Bold" size="15.0" />
+                    </font>
+                </Text>
+                <Text layoutX="562.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quilometragem final">
+                    <font>
+                        <Font name="Montserrat Bold" size="15.0" />
+                    </font>
+                </Text>
+                <Button fx:id="botaoVoltar" alignment="CENTER" layoutX="100.0" layoutY="398.0" mnemonicParsing="false" onAction="#clickBotaoVoltar" styleClass="botaoVoltar" stylesheets="@CSS/botoes.css" text="Voltar" textAlignment="CENTER" textFill="#004e98">
+                    <padding>
+                        <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+                    </padding>
+                    <font>
+                        <Font name="Montserrat Bold" size="16.0" />
+                    </font>
+                    <effect>
+                        <DropShadow blurType="GAUSSIAN" offsetX="1.0" offsetY="2.0">
+                            <color>
+                                <Color red="0.7529411911964417" green="0.7529411911964417" blue="0.7529411911964417" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button fx:id="botaoConfirmarDevolucao" layoutX="722.0" layoutY="398.0" mnemonicParsing="false" onAction="#confirmarDevolucaoDeCarro" style="-fx-background-color: #004E98; -fx-background-radius: 42px; -fx-cursor: hand;" text="Confirmar devolução" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Bold" size="16.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+                    </padding>
+                </Button>
+                <Text layoutX="562.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Montserrat Regular" size="14.0" />
+                    </font>
+                </Text>
+                <ChoiceBox fx:id="carroDevolvido" layoutX="100.0" layoutY="66.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-color: #fff; -fx-background-radius: 42px;" />
+                <Text layoutX="118.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Houve dano ao veículo? Selecione uma opção:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <ChoiceBox fx:id="danoCausado" layoutX="100.0" layoutY="156.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-color: #fff; -fx-background-radius: 42px;" />
+                <Button fx:id="botaoReservar1" layoutX="100.0" layoutY="219.0" mnemonicParsing="false" style="-fx-background-color: #004E98; -fx-background-radius: 42px; -fx-cursor: hand;" text="Calcular" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Bold" size="16.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+                    </padding>
+                </Button>
+                <TextField fx:id="quilometragemDevolucao" layoutX="544.0" layoutY="66.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a quilometragem final do veículo" style="-fx-background-color: #ffffff; -fx-background-radius: 42px;" />
+                <Text layoutX="243.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <Text fx:id="valorDano" layoutX="290.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$ 1000,00">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="37.0" fitWidth="200.0" layoutX="80.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imagens/logomarca.png" />
+            </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="498.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Devolver Carro" textAlignment="CENTER">
+            <font>
+                <Font name="Montserrat Bold" size="28.0" />
+            </font>
+        </Text>
+        <Button fx:id="botaoSair" layoutX="1020.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickBotaoSair" style="-fx-background-color: #FF6700; -fx-background-radius: 42px; -fx-cursor: hand;" text="Sair" textFill="WHITE">
+            <padding>
+                <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+            </padding>
+            <font>
+                <Font name="Montserrat Bold" size="16.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
