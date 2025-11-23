@@ -37,7 +37,7 @@
                   <Font name="Montserrat Bold" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="inputModelo" layoutX="540.0" layoutY="66.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a modelo do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
+            <TextField fx:id="inputModelo" layoutX="540.0" layoutY="66.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite o modelo do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
                <padding>
                   <Insets left="24.0" />
                </padding>
@@ -89,7 +89,7 @@
                  <font><Font name="Montserrat Bold" size="15" /></font>
              </Text>
 
-             <ComboBox fx:id="comboCategoria" layoutX="540.0" layoutY="244.0" prefHeight="48" prefWidth="380" styleClass="inputArea" stylesheets="@CSS/inputs.css">
+             <ComboBox fx:id="comboCategoria" layoutX="540.0" layoutY="244.0" prefHeight="48" prefWidth="380" promptText="Selecione a categoria" styleClass="inputArea" stylesheets="@CSS/inputs.css">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Hatch" />

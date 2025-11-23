@@ -73,19 +73,19 @@
                   <Font name="Montserrat Regular" size="14.0" />
                </font>
             </Text>
-            <DatePicker fx:id="dataRetirada" layoutX="100.0" layoutY="134.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-color: #fff;">
+            <DatePicker fx:id="dataRetirada" layoutX="100.0" layoutY="134.0" prefHeight="48.0" prefWidth="380.0" promptText="Escolha a data de retirada" style="-fx-background-color: #fff;">
                <padding>
                   <Insets left="24.0" />
                </padding>
             </DatePicker>
             <ListView fx:id="listVeiculosdisponiveis" layoutX="540.0" layoutY="160.0" prefHeight="200.0" prefWidth="380.0" style="-fx-background-radius: 42px;" />
-            <DatePicker fx:id="dataDevolucao" layoutX="100.0" layoutY="212.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-color: #fff;">
+            <DatePicker fx:id="dataDevolucao" layoutX="100.0" layoutY="212.0" prefHeight="48.0" prefWidth="380.0" promptText="Escolha a data de devolução" style="-fx-background-color: #fff;">
                <padding>
                   <Insets left="24.0" />
                </padding>
             </DatePicker>
             <ChoiceBox fx:id="inputCliente" layoutX="100.0" layoutY="52.0" prefHeight="48.0" prefWidth="380.0" style="-fx-background-color: #fff; -fx-background-radius: 42px;" />
-             <ComboBox fx:id="comboCategoria" layoutX="540.0" layoutY="52.0" prefHeight="48.0" prefWidth="380.0" styleClass="inputArea" stylesheets="@CSS/inputs.css">
+             <ComboBox fx:id="comboCategoria" layoutX="540.0" layoutY="52.0" prefHeight="48.0" prefWidth="380.0" promptText="Selecione a categoria do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                      </FXCollections>

@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,25 +14,26 @@ public class ManutencaoDAO {
     private static final String TABLE = "manutencao";
 
     public void createManutencao(Manutencao m1) throws SQLException {
-        String SQL = "INSERT INTO " + TABLE + " (id, data, custo, detalhesManutencao) VALUES (?, ?, ?, ?)";
+        String SQL = "INSERT INTO " + TABLE + " (idVeiculo, data, custo, detalhesManutencao) VALUES (?, ?, ?, ?)";
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
+        String updateDisponibilidadeSQL = "UPDATE veiculo SET disponibilidade = ? WHERE id = ?";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
-            int idVeiculo = 0;
+            int idVeiculo;
 
-            // Buscar ID do veículo
+            // Buscar ID do veículo no banco
             try (PreparedStatement pstmt = connection.prepareStatement(getVeiculoSQL)) {
                 pstmt.setString(1, m1.getVeiculo().getPlaca());
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) {
                         idVeiculo = rs.getInt("id");
                     } else {
-                        throw new SQLException("Veículo não encontrado: " + m1.getVeiculo().getPlaca());
+                        throw new SQLException("Veículo não encontrado no banco: " + m1.getVeiculo().getPlaca());
                     }
                 }
             }
 
-            // Inserir manutencao
+            // Inserir manutenção
             try (PreparedStatement pstmt = connection.prepareStatement(SQL)) {
                 pstmt.setInt(1, idVeiculo);
                 pstmt.setDate(2, java.sql.Date.valueOf(m1.getData()));
@@ -41,8 +41,16 @@ public class ManutencaoDAO {
                 pstmt.setString(4, m1.getDetalhesManutencao());
                 pstmt.executeUpdate();
             }
+
+            // Atualiza a disponibilidade
+            try (PreparedStatement pstmt = connection.prepareStatement(updateDisponibilidadeSQL)) {
+                pstmt.setBoolean(1, false);
+                pstmt.setInt(2, idVeiculo);
+                pstmt.executeUpdate();
+            }
         }
     }
+
 
     public List<Manutencao> getManutencoes() throws SQLException {
         String SQL = "SELECT m1.*, v1.* FROM manutencao m1 " +

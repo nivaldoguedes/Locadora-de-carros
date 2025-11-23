@@ -86,4 +86,28 @@ public class VeiculoDAO {
             }
         }
     }
+
+    public Veiculo buscarPorPlaca(String placa) throws SQLException {
+        String SQL = "SELECT * FROM veiculo WHERE placa = ?";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(SQL)) {
+
+            stmt.setString(1, placa);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return new Veiculo(
+                        rs.getString("placa"),
+                        rs.getString("marca"),
+                        rs.getString("modelo"),
+                        rs.getInt("ano"),
+                        rs.getFloat("quilometragemAtual"),
+                        rs.getString("categoria"),
+                        rs.getBoolean("disponibilidade")
+                );
+            }
+        }
+        return null;
+    }
 }
