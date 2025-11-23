@@ -7,6 +7,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+
 public class DevolucaoController {
 
     @FXML
@@ -34,13 +36,13 @@ public class DevolucaoController {
     private Text valorDano;
 
     @FXML
-    void clickBotaoSair(ActionEvent event) {
-
+    void clickBotaoSair(ActionEvent event) throws IOException {
+        SceneNavegacao.navegar(event, "/view/login.fxml", "Login");
     }
 
     @FXML
-    void clickBotaoVoltar(ActionEvent event) {
-
+    void clickBotaoVoltar(ActionEvent event) throws IOException {
+        SceneNavegacao.navegar(event, "/view/menu.fxml",  "Menu");
     }
 
     @FXML
