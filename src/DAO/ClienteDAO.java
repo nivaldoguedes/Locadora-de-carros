@@ -23,7 +23,7 @@ public class ClienteDAO {
     }
 
     public List<Cliente> getClientes() throws SQLException {
-        String SQL = "SELECT * FROM " + TABLE;
+        String SQL = "SELECT cpf, nome, formaPagamento, telefone FROM cliente";
         List<Cliente> clientes = new ArrayList<>();
 
         try (Connection connection = ConnectionFactory.getConnection();
@@ -41,6 +41,11 @@ public class ClienteDAO {
             }
         }
         return clientes;
+    }
+
+    private String mascararCPF(String cpf) {
+        if (cpf == null || cpf.length() < 14) return cpf;
+        return "***" + cpf.substring(3, 11) + "**";
     }
 
     public void updateCliente(Cliente c1) throws SQLException {

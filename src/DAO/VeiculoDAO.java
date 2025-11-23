@@ -42,7 +42,9 @@ public class VeiculoDAO {
                         rs.getString("categoria"),
                         rs.getBoolean("disponibilidade")
                 );
-                veiculos.add(v1);
+                if (v1.isDisponibilidade()) {
+                    veiculos.add(v1);
+                }
             }
         }
         return veiculos;

@@ -31,12 +31,39 @@
                   <Font name="Montserrat Regular" size="14.0" />
                </font>
             </TextField>
+
+            <Text layoutX="562.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo">
+               <font>
+                  <Font name="Montserrat Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="inputModelo" layoutX="540.0" layoutY="66.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a modelo do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
+               <padding>
+                  <Insets left="24.0" />
+               </padding>
+               <font>
+                  <Font name="Montserrat Regular" size="14.0" />
+               </font>
+            </TextField>
             <Text layoutX="118.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placa">
                <font>
                   <Font name="Montserrat Bold" size="15.0" />
                </font>
             </Text>
             <TextField fx:id="inputPlaca" layoutX="100.0" layoutY="156.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a placa do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
+               <padding>
+                  <Insets left="24.0" />
+               </padding>
+               <font>
+                  <Font name="Montserrat Regular" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="562.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quilometragem">
+               <font>
+                  <Font name="Montserrat Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="inputQuilometragem" layoutX="540.0" layoutY="156.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a quilometragem do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
                <padding>
                   <Insets left="24.0" />
                </padding>
@@ -72,37 +99,8 @@
                  </items>
                  <padding><Insets left="24" /></padding>
              </ComboBox>
-
-            <Text layoutX="562.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo">
-               <font>
-                  <Font name="Montserrat Bold" size="15.0" />
-               </font>
-            </Text>
-            <TextField fx:id="inputModelo" layoutX="540.0" layoutY="66.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a modelo do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
-               <padding>
-                  <Insets left="24.0" />
-               </padding>
-               <font>
-                  <Font name="Montserrat Regular" size="14.0" />
-               </font>
-            </TextField>
-            <Text layoutX="562.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quilometragem">
-               <font>
-                  <Font name="Montserrat Bold" size="15.0" />
-               </font>
-            </Text>
-            <TextField fx:id="inputQuilometragem" layoutX="540.0" layoutY="156.0" prefHeight="48.0" prefWidth="380.0" promptText="Digite a quilometragem do veículo" styleClass="inputArea" stylesheets="@CSS/inputs.css">
-               <padding>
-                  <Insets left="24.0" />
-               </padding>
-               <font>
-                  <Font name="Montserrat Regular" size="14.0" />
-               </font>
-            </TextField>
-             <Text fx:id="avisoCadastro" fill="#D00000"
-                   layoutX="122.0" layoutY="315.0"
-                   strokeWidth="0" text="">
-                 <font><Font name="Montserrat Bold" size="14"/></font>
+             <Text fx:id="avisoCadastro" fill="#D00000" layoutX="122.0" layoutY="315.0" strokeWidth="0" text="">
+                 <font><Font name="Montserrat Bold" size="14" /></font>
              </Text>
             <Button fx:id="botaoVoltar" alignment="CENTER" layoutX="100.0" layoutY="398.0" mnemonicParsing="false" onAction="#clickBotaoVoltar" styleClass="botaoVoltar" stylesheets="@CSS/botoes.css" text="Voltar" textAlignment="CENTER" textFill="#004e98">
                <padding>

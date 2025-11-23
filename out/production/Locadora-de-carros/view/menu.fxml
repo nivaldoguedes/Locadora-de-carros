@@ -26,7 +26,7 @@
             <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
          </padding>
       </Button>
-      <GridPane layoutX="161.0" layoutY="311.0" prefHeight="316.0" prefWidth="858.0">
+      <GridPane layoutX="161.0" layoutY="283.0" prefHeight="316.0" prefWidth="858.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -42,27 +42,27 @@
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuManutencoes" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Manutenções" textFill="#004e98" GridPane.columnIndex="1">
+            <Button fx:id="btnMenuCadastrarCliente" mnemonicParsing="false" onAction="#clickBotaoCadastrarCliente" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Cadastrar Cliente" textFill="#004e98" GridPane.columnIndex="1">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuLocarVeiculo" mnemonicParsing="false" onAction="#clickBotaoLocarVeiculo" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Locar Veículo" textFill="#004e98" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btnMenuManutencoes" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Manutenções" textFill="#004e98" GridPane.rowIndex="2">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuCadastrarCliente" mnemonicParsing="false" onAction="#clickBotaoCadastrarCliente" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Cadastrar Cliente" textFill="#004e98" GridPane.rowIndex="1">
+            <Button fx:id="btnMenuDevolucao" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Devolução" textFill="#004e98" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuGerarRelatorios" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Gerar Relatórios" textFill="#004e98" GridPane.rowIndex="2">
+            <Button fx:id="btnMenuLocarVeiculo1" mnemonicParsing="false" onAction="#clickBotaoLocarVeiculo" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Reservar Veículo" textFill="#004e98" GridPane.rowIndex="1">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuDevolucao" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Devolução" textFill="#004e98" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btnMenuGerarRelatorios" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Gerar Relatórios" textFill="#004e98" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>

@@ -47,11 +47,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "CPF=" + CPF +
-                ", nome='" + nome + '\'' +
-                ", formaPagamento=" + formaPagamento +
-                ", telefone=" + telefone +
-                '}';
+        return nome;
     }
 }
