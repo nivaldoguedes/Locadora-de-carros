@@ -58,4 +58,9 @@ public class MenuController {
         SceneNavegacao.navegar(event, "/view/devolucaoDeCarro.fxml", "Gerar Devolução de Carro");
     }
 
+    @FXML
+    void clickBotaoManutencoes(ActionEvent event) throws IOException {
+        SceneNavegacao.navegar(event, "/view/registrarManutencao.fxml", "Registrar Manutenção");
+    }
+
 }

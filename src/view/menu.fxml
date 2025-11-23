@@ -42,7 +42,7 @@
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuManutencoes" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Manutenções" textFill="#004e98" GridPane.columnIndex="1">
+            <Button fx:id="btnMenuManutencoes" mnemonicParsing="false" onAction="#clickBotaoManutencoes" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Manutenções" textFill="#004e98" GridPane.columnIndex="1">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
