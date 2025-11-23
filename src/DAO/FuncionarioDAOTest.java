@@ -13,9 +13,9 @@ public class FuncionarioDAOTest {
             System.out.println("--- 1. TESTE DE INSERÇÃO ---");
 
             Funcionario novo = new Funcionario(
-                    "123456758900",
-                    "Nivaldo Guedes",
-                    "123456"
+                    "admin",
+                    "admin",
+                    "admin"
             );
 
             dao.createFuncionario(novo);
