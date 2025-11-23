@@ -48,4 +48,9 @@ public class MenuController {
         SceneNavegacao.navegar(event, "/view/login.fxml", "Login");
     }
 
+    @FXML
+    void clickBotaoGerarRelatorios(ActionEvent event) throws IOException {
+        SceneNavegacao.navegar(event, "/view/gerarRelatorios.fxml", "Gerar Relatório");
+    }
+
 }

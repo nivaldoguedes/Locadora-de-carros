@@ -57,7 +57,7 @@
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="btnMenuGerarRelatorios" mnemonicParsing="false" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Gerar Relatórios" textFill="#004e98" GridPane.rowIndex="2">
+            <Button fx:id="btnMenuGerarRelatorios" mnemonicParsing="false" onAction="#clickBotaoGerarRelatorios" prefHeight="84.0" prefWidth="417.0" style="-fx-background-radius: 100px; -fx-cursor: hand;" text="Gerar Relatórios" textFill="#004e98" GridPane.rowIndex="2">
                <font>
                   <Font name="Montserrat Bold" size="28.0" />
                </font>
