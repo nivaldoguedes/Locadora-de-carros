@@ -4,6 +4,10 @@ import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
@@ -46,7 +50,9 @@ public class RelatorioViewController {
             colVeiculo.setCellValueFactory(cell ->
                     new javafx.beans.property.SimpleStringProperty(
                             cell.getValue().getVeiculo() != null
-                                    ? cell.getValue().getVeiculo().getMarca() + " " + cell.getValue().getVeiculo().getModelo()
+                                    ? cell.getValue().getVeiculo().getMarca() + " "
+                                    + cell.getValue().getVeiculo().getModelo() + " - " +
+                                    cell.getValue().getVeiculo().getPlaca()
                                     : ""
                     )
             );
@@ -117,7 +123,9 @@ public class RelatorioViewController {
         colCusto.setCellValueFactory(new PropertyValueFactory<>("custo"));
 
         TableColumn<Manutencao, String> colDetalhes = new TableColumn<>("Detalhes");
-        colDetalhes.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        colDetalhes.setCellValueFactory(cell ->
+                new SimpleStringProperty(cell.getValue().getDetalhesManutencao())
+        );
 
         tabela.getColumns().addAll(colVeiculo, colData, colCusto, colDetalhes);
 
@@ -134,12 +142,10 @@ public class RelatorioViewController {
     public void exibirRelatorioFaturamento(float total, String titulo) {
 
         tituloRelatorio.setText(titulo);
-
         aviso.setText("Faturamento total no período: R$ " + total);
 
         tabelaAluguel.setVisible(false);
     }
-
 
     // ============================================================
     //   AJUSTE AUTOMÁTICO DA JANELA

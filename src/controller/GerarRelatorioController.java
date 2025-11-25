@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Aluga;
 import model.Manutencao;
+import javafx.scene.chart.*;
 import model.Veiculo;
 
 import java.io.IOException;
@@ -61,17 +62,24 @@ public class GerarRelatorioController {
         LocalDate inicio = dataInicio.getValue();
         LocalDate fim = dataFim.getValue();
 
-        if (inicio == null || fim == null) {
-            aviso.setText("Selecione um intervalo de datas.");
-            return;
-        }
-
-        if (fim.isBefore(inicio)) {
-            aviso.setText("Data final não pode ser antes da inicial.");
-            return;
-        }
-
         String opcao = inputOpcaoDeRelatorio.getValue();
+
+        // Para relatórios que não precisam de fim (manutenção), fim pode ser null
+        if (inicio == null) {
+            aviso.setText("Selecione a data inicial.");
+            return;
+        }
+
+        if (!"Manutenções".equals(opcao)) {
+            if (fim == null) {
+                aviso.setText("Selecione a data final.");
+                return;
+            }
+            if (fim.isBefore(inicio)) {
+                aviso.setText("Data final não pode ser antes da inicial.");
+                return;
+            }
+        }
 
         try {
 
@@ -91,9 +99,8 @@ public class GerarRelatorioController {
                 // =============================================================
                 case "Manutenções" -> {
                     List<Manutencao> manutencoes =
-                            relatorioDAO.getRelatorioManutencoes(inicio, fim);
+                            relatorioDAO.getRelatorioManutencoes(inicio, fim); // pode tratar fim null no DAO
                     abrirRelatorioManutencoes(manutencoes, "Relatório de Manutenções");
-
                 }
 
                 // =============================================================
@@ -163,7 +170,6 @@ public class GerarRelatorioController {
         stage.setTitle(titulo);
         stage.show();
     }
-
 
     // ====================================================================
     //  NAVEGAÇÃO
