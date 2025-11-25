@@ -89,7 +89,7 @@ public class ManutencaoDAO {
 
     public void updateManutencao(Manutencao m1) throws SQLException {
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
-        String updateSQL = "UPDATE menutencao SET custo = ?, detalhesManutencao = ? WHERE idVeiculo = ?";
+        String updateSQL = "UPDATE manutencao SET custo = ?, detalhesManutencao = ? WHERE idVeiculo = ?";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
 
@@ -115,7 +115,6 @@ public class ManutencaoDAO {
 
     public void deleteManutencao(Manutencao m1) throws SQLException {
         String getVeiculoSQL = "SELECT id FROM veiculo WHERE placa = ?";
-        String deleteSQL = "DELETE FROM " + TABLE + " WHERE cpf = ?";
 
         try (Connection connection = ConnectionFactory.getConnection()) {
             int id = 0;
@@ -126,11 +125,6 @@ public class ManutencaoDAO {
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) id = rs.getInt("id");
                 }
-            }
-
-            try (PreparedStatement pstmt = connection.prepareStatement(deleteSQL)) {
-                pstmt.setInt(1, id);
-                pstmt.executeUpdate();
             }
         }
     }

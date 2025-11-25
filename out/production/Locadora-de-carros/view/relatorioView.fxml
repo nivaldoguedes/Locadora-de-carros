@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="448.0" prefWidth="805.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="controller.RelatorioViewController">
+
+    <top>
+        <Label fx:id="tituloRelatorio" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    </top>
+
+    <center>
+        <TableView fx:id="tabelaAluguel">
+            <columns>
+                <TableColumn fx:id="colCliente" text="Cliente" />
+                <TableColumn fx:id="colVeiculo" text="Veículo" />
+                <TableColumn fx:id="colDataAluguel" text="Data Aluguel" />
+                <TableColumn fx:id="colDataDevolucao" text="Data Devolução" />
+                <TableColumn fx:id="colValor" text="Valor" />
+            </columns>
+        </TableView>
+    </center>
+
+    <TableView fx:id="tabelaManutencoes">
+        <columns>
+            <TableColumn fx:id="colunaVeiculo" prefWidth="150" text="Veículo" />
+            <TableColumn fx:id="colunaData" prefWidth="100" text="Data" />
+            <TableColumn fx:id="colunaCusto" prefWidth="90" text="Custo" />
+            <TableColumn fx:id="colunaDetalhes" prefWidth="250" text="Detalhes da Manutenção" />
+        </columns>
+    </TableView>
+    <center>
+        <VBox fx:id="container" spacing="10" />
+    </center>
+
+
+    <bottom>
+        <Label fx:id="aviso">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+        </Label>
+    </bottom>
+
+</BorderPane>
