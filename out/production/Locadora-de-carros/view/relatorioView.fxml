@@ -34,11 +34,7 @@
                     <TableColumn fx:id="colunaDetalhes" prefWidth="250" text="Detalhes da Manutenção" />
                 </columns>
             </TableView>
+            <Label fx:id="aviso" />
         </VBox>
-        <Label fx:id="aviso">
-            <padding>
-                <Insets bottom="10" left="10" right="10" top="10" />
-            </padding>
-        </Label>
     </center>
 </BorderPane>
